@@ -136,7 +136,7 @@ function Navbar({dark,setDark}) {
 
             {/* Right side buttons */}
             <div className="absolute m-3 inset-y-0 right-0 flex items-center pr-2 tab:static tab:inset-auto tab:ml-1 tab:pr-0">
-              <div className={`w-auto ring-1 shadow hover:shadow-lg hover:shadow-white shadow-blue-200 bg-transparent bg-opacity-50 hover:scale-110 transition-all font-medium font-Patua ${dark?'bg-green-100 text-gray-950 hover:bg-white/60':'bg-pink-300'}  rounded-full py-1 px-2 m-2 flex items-center justify-center`}>
+              <div className={`w-auto ring-1 shadow hover:shadow-lg hover:shadow-white shadow-blue-200  bg-opacity-50 hover:scale-110 transition-all font-medium font-Patua ${dark?'bg-green-100 text-gray-950 hover:bg-white/60':'bg-pink-300'}  rounded-full py-1 px-2 m-2 flex items-center justify-center`}>
                 <Link></Link>
                 <Link to='/resume'>CV</Link>
               </div>

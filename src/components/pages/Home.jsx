@@ -35,18 +35,18 @@ function Home({ dark }) {
           } tab:py-10  phone:m-0 phone:p-0 ring-orange-50 rounded-xl hover:bg-gradient-to-br hover:text-white bg-opacity-0 backdrop-blur-0 overflow-hidden transition-all  `}
         >
           {/* <FontAwesomeIcon icon={faHippo} size='2xl' className='text-9xl'/> */}
-          <h2 className="font-semibold phone:text-xl tab:text-2xl tablet:text-3xl laptop:text-5xl font-sketch ">
+          <h2 className="font-semibold phone:text-xl tab:text-2xl tablet:text-3xl laptop:text-4xl font-sketch ">
             HEY, I'M{" "}
-            <div className="inline phone:font-semibold tablet:font-bold phone:hover:text-2xl tab:hover:text-3xl tablet:hover:text-4xl laptop:hover:text-6xl transition-all  ">
+            <div className="inline phone:font-semibold tablet:font-bold phone:hover:text-2xl tab:hover:text-3xl tablet:hover:text-4xl laptop:hover:text-5xl transition-all  ">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-purple-600 to-pink-900 font-eliteRegular hover:italic ">
                 {" "}
                 ANURAG PANDEY
               </span>
             </div>
           </h2>
-          <h2 className="text-5xl phone:text-xl tab:text-2xl tablet:text-3xl laptop:text-5xl font-sketch font-semibold ">
+          <h2 className="text-5xl phone:text-xl tab:text-2xl tablet:text-3xl laptop:text-4xl font-sketch font-semibold ">
             BUT YOU CAN CALL ME{" "}
-            <div className="inline phone:font-semibold tablet:font-bold phone:hover:text-2xl tab:hover:text-3xl tablet:hover:text-4xl laptop:hover:text-6xl transition-all">
+            <div className="inline phone:font-semibold tablet:font-bold phone:hover:text-2xl tab:hover:text-3xl tablet:hover:text-4xl laptop:hover:text-5xl transition-all">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-950 via-purple-700 to-pink-950 font-eliteRegular hover:italic">
                 SACHIN
               </span>
