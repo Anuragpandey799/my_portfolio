@@ -18,7 +18,7 @@ function Home({ dark }) {
   // }, []);
   return (
     <div
-      className={`w-full phone:h-screen  ${
+      className={`w-full phone:1    h-screen  ${
         dark
           ? "bg-blue-950 text-white"
           : " bg-gradient-to-br from-purple-800 via-black/40 to-blue-800"
@@ -38,7 +38,7 @@ function Home({ dark }) {
           <h2 className="font-semibold phone:text-xl tab:text-2xl tablet:text-3xl laptop:text-4xl font-sketch ">
             HEY, I'M{" "}
             <div className="inline phone:font-semibold tablet:font-bold phone:hover:text-2xl tab:hover:text-3xl tablet:hover:text-4xl laptop:hover:text-5xl transition-all  ">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-purple-600 to-pink-900 font-eliteRegular hover:italic ">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-600 to-pink-700 font-eliteRegular hover:italic ">
                 {" "}
                 ANURAG PANDEY
               </span>
@@ -47,7 +47,7 @@ function Home({ dark }) {
           <h2 className="text-5xl phone:text-xl tab:text-2xl tablet:text-3xl laptop:text-4xl font-sketch font-semibold ">
             BUT YOU CAN CALL ME{" "}
             <div className="inline phone:font-semibold tablet:font-bold phone:hover:text-2xl tab:hover:text-3xl tablet:hover:text-4xl laptop:hover:text-5xl transition-all">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-950 via-purple-700 to-pink-950 font-eliteRegular hover:italic">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-700 to-pink-600 font-eliteRegular hover:italic">
                 SACHIN
               </span>
             </div>

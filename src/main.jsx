@@ -12,6 +12,7 @@ import GreatIndianScientist from "./components/projects/GreatIndianScientist.jsx
 import Resume from "./components/pages/Resume.jsx";
 
 const Main = () => {
+  
   const [dark, setDark] = useState(true);
   return (
     <Router>

@@ -52,7 +52,7 @@ function Footer({ dark }) {
                         icon={faEnvelope}
                         className="mr-2 hover:text-2xl  ease-in-out"
                       />
-                      anuraganitaanil4aaa@gmail.com
+                      anuhackerag799@gmail.com
                     </Link>
                   </li>
                   <li>

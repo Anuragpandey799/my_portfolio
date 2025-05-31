@@ -13,7 +13,7 @@ function Project({dark}) {
           <div className={`overflow-auto m-2 hover:scale-105 ${dark?'text-white':'hover:bg-gray-400'} transition-all rounded-lg ring-1 ring-red-500`}>
             <div className="  bg-gray-300 w-full tab:h-2/3 phone:h-1/2 rounded-xl ">
               <img
-                src="src\assets\profile-about.png"
+                src="/Images/profile-about.png"
                 alt=""
                 className="hover:scale-110 transition-all phone:h-full"
               />
@@ -36,7 +36,7 @@ function Project({dark}) {
           <div className={`overflow-auto m-2 hover:scale-105 ${dark?'text-white':'hover:bg-gray-400'} transition-all rounded-lg ring-1 ring-red-500`} onClick={()=>{}}>
             <div className="  bg-gray-300 w-full h-2/3 rounded-xl">
               <img
-                src="src\assets\profile-about.png"
+                src="/Images/profile-about.png"
                 alt=""
                 className="hover:scale-110 transition-all"
               />
@@ -58,7 +58,7 @@ function Project({dark}) {
           {/* <div className={`overflow-auto m-2 hover:scale-105 ${dark?'text-white':'hover:bg-gray-400'} transition-all rounded-lg ring-1 ring-red-500`}>
             <div className="  bg-gray-300 w-full h-2/3 rounded-xl">
               <img
-                src="src\assets\profile-about.png"
+                src="/Images/profile-about.png"
                 alt=""
                 className="hover:scale-110 transition-all"
               />
@@ -80,7 +80,7 @@ function Project({dark}) {
           <div className={`overflow-auto m-2 hover:scale-105 ${dark?'text-white':'hover:bg-gray-400'} transition-all rounded-lg ring-1 ring-red-500`}>
             <div className="  bg-gray-300 w-full h-2/3 rounded-xl">
               <img
-                src="src\assets\profile-about.png"
+                src="/Images/profile-about.png"
                 alt=""
                 className="hover:scale-110 transition-all"
               />

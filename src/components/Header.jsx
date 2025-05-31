@@ -73,7 +73,7 @@ function Navbar({dark,setDark}) {
               <div className="flex shrink-0 items-center ">
                 <img
                   className="tab:h-9 phone:h-12 phone:rounded-md tab:w-auto phone:w-20 tab:rounded-l-lg tab:rounded-r-none"
-                  src="src\assets\android-chrome-512x512.png "
+                  src="/Images/android-chrome-512x512.png "
                   alt="Name-logo"
                 />
                 <Link

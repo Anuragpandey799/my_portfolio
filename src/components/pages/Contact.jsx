@@ -41,7 +41,7 @@ function Contact({ dark }) {
   return (
     <section
       className={`phone:pt-5 tab:p-10 bg-gradient-to-br ${
-        dark ? "from-blue-950 via-orange-900 to-black" : "bg-gray-400 "
+        dark ? "from-blue-950 via-orange-900 to-black" : "bg-gray-300 "
       } `}
     >
       <div className="mx-auto tablet:max-w-screen-laptop phone:w-full px-4 py-16 sm:px-6 lg:px-8 ">

@@ -25,7 +25,7 @@ function App({dark,setDark}) {
             outerSize={30}
             color="999, 999, 999"
             outerAlpha={0.5}
-            innerScale={0.9}
+            innerScale={0.9}  
             outerScale={2}
             trailingSpeed={10}
           />

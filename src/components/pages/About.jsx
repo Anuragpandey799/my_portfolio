@@ -1,6 +1,7 @@
 import React from "react";
 import { ReactTyped, Typed } from "react-typed";
 import { Link } from "react-router";
+// import AboutImage from ".public/Images/progile-about.png"
 
 
 function About({dark}) {
@@ -11,7 +12,7 @@ function About({dark}) {
           className={` w-auto h-auto flex justify-center items-center rounded-full  ${dark?'bg-gray-800 ring-1':''} overflow-hidden transition-all
         `}
         >
-          <img src="src\assets\profile-about.png" alt="" width={450} className="hover:scale-110 transition-all" />
+          <img src="/Images/myPhoto3.jpg" alt="" width={450} className="hover:scale-110 transition-all" />
         </div>
       </div>
       <div className="tablet:mt-10 tablet:pt-10  tablet:w-2/3  h-full flex justify-center place-items-center ">
