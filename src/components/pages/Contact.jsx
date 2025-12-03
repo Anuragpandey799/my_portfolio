@@ -1,11 +1,10 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { Link } from "react-router";
+import { FiPhone, FiMail, FiSend } from "react-icons/fi";
 
 function Contact({ dark }) {
   const form = useRef();
-  const [email_sent, setEmail_sent] = useState(false);
-  const [Enquiry, setEnquiry] = useState("Send Enquiry");
+  const [buttonText, setButtonText] = useState("Send Enquiry");
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -16,163 +15,187 @@ function Contact({ dark }) {
       })
       .then(
         () => {
-          console.log("SUCCESS! message sent ");
-          setEnquiry("Enquiry Sent");
-          setEmail_sent(true);
+          setButtonText("Enquiry Sent ✅");
+          // alert("Thank you! Your message has been sent successfully.");
+          e.target.reset(); // Clear the form
 
           setTimeout(() => {
-            setEnquiry("Send Enquiry");
-            setEmail_sent(false);
+            setButtonText("Send Enquiry");
           }, 3000);
         },
-        (e) => {
-          console.log("FAILED... message not sent", e.status, " : ", e.text);
-          setEnquiry("Enquiry Not Sent");
-          // setEmail_sent(true);
+        (error) => {
+          console.error("FAILED:", error);
+          setButtonText("Failed! Retry 🔁");
 
-          setTimeout(() => {
-            setEnquiry("Retry");
-            // setEmail_sent(false);
-          }, 3000);
+          setTimeout(() => setButtonText("Send Enquiry"), 3000);
         }
       );
   };
 
   return (
     <section
-      className={`phone:pt-5 tab:p-10 bg-gradient-to-br ${
-        dark ? "from-blue-950 via-orange-900 to-black" : "bg-gray-300 "
-      } `}
+      className={`min-h-screen py-16 px-6 sm:px-12 ${
+        dark
+          ? "bg-gradient-to-br from-blue-950 via-slate-900 to-black text-white"
+          : "bg-gradient-to-br from-gray-100 via-white to-gray-300 text-gray-900"
+      }`}
     >
-      <div className="mx-auto tablet:max-w-screen-laptop phone:w-full px-4 py-16 sm:px-6 lg:px-8 ">
-        <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
-          <div className="lg:col-span-2 lg:py-12">
-            <h3 className="phone:text-xl tab:text-2xl tablet:text-3xl m-2 font-Patua text-transparent bg-clip-text bg-gradient-to-r from-black/80 via-purple-600 to-pink-900">
-              Anurag welcome's you{" "}
-            </h3>
-            <p
-              className={`max-w-xl phone:text-base tab:text-lg tablet:text-xl font-montserrat text-justify ${
-                dark ? "text-white" : "text-gray-900"
-              }`}
-            >
-              Thank you for taking the time to explore my portfolio. Whether you
-              have a project in mind, a collaboration idea, or just want to say
-              hello, I'd love to hear from you! Feel free to reach out to me
-              through the contact form below, or connect with me on social
-              media. Your thoughts, feedback, and inquiries are always welcome
-              and highly appreciated. Let's create something amazing together!
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Left Side */}
+        <div data-aos="fade-up">
+          <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-600">
+            Let’s Connect!
+          </h2>
+          <p className="text-lg mb-6 leading-relaxed">
+            Whether you have a project in mind, a collaboration opportunity, or
+            just want to say hello, I'm excited to hear from you. Fill out the
+            form and I'll get back to you shortly!
+          </p>
+
+          <div className="space-y-4">
+            <p className="flex items-center gap-2 text-lg">
+              <FiPhone className="text-pink-500" />
+              <a
+                href="tel:+917991845638"
+                className="hover:underline font-semibold"
+              >
+                +91 79918 45638
+              </a>
             </p>
 
-            <div
-              className={`mt-8 text ${dark ? "text-red-500" : "text-red-800"}`}
-            >
-              <label
-                htmlFor="call"
-                className="phone:text-base tab:text-lg tablet:text-xl "
+            <p className="flex items-center gap-2 text-lg">
+              <FiMail className="text-purple-500" />
+              <a
+                href="mailto:anurag@example.com"
+                className="hover:underline font-semibold"
               >
-                <code className="font-codePro">
-                  Feel free to call me anytime.{" "}
-                </code>
-              </label>
-              <Link
-                id="call"
-                to="tel:+91 7991845638"
-                className={`phone:text-lg tab:text-xl tablet:text-2xl font-semibold hover:font-bold hover:text-3xl transition-all ${
-                  dark ? "text-green-600" : "text-red-800"
+                anurag@example.com
+              </a>
+            </p>
+          </div>
+        </div>
+
+        {/* Right Side */}
+        <div
+          data-aos="fade-up"
+          className={`rounded-2xl shadow-xl p-8 tablet:p-10 ${
+            dark
+              ? "bg-black/40 backdrop-blur-sm border border-white/10"
+              : "bg-white/90 backdrop-blur-md border border-gray-200"
+          }`}
+        >
+          <form ref={form} onSubmit={sendEmail} className="space-y-5">
+            {/* Name */}
+            <div>
+              <label
+                htmlFor="name"
+                className={`block mb-1 text-sm font-medium ${
+                  dark ? "text-white" : "text-gray-900"
                 }`}
               >
-                {" "}
-                +91- 7991845638{" "}
-              </Link>
-
-              {/* <Linkddress className="mt-2 not-italic">
-                  282 Kevin Brook, Imogeneborough, CA 58517
-                </address> */}
+                Name
+              </label>
+              <input
+                id="name"
+                name="from_name"
+                type="text"
+                required
+                placeholder="Your Name"
+                className={`w-full rounded-md p-3 border focus:ring-2 focus:outline-none ${
+                  dark
+                    ? "bg-gray-900 text-white border-gray-700 focus:ring-purple-500"
+                    : "bg-white text-gray-900 border-gray-300 focus:ring-pink-400"
+                }`}
+              />
             </div>
-          </div>
-          <div className="  w-full flex justify-center">
-            <div
-              className={`rounded-lg ${
-                dark ? "bg-orange-950" : "bg-gray-500"
-              } p-8 shadow-lg tablet:col-span- tablet:p-12 tablet:w-2/3 phone:w-full`}
+
+            {/* Email */}
+            <div>
+              <label
+                htmlFor="email"
+                className={`block mb-1 text-sm font-medium ${
+                  dark ? "text-white" : "text-gray-900"
+                }`}
+              >
+                Email
+              </label>
+              <input
+                id="email"
+                name="from_email"
+                type="email"
+                required
+                placeholder="you@example.com"
+                className={`w-full rounded-md p-3 border focus:ring-2 focus:outline-none ${
+                  dark
+                    ? "bg-gray-900 text-white border-gray-700 focus:ring-purple-500"
+                    : "bg-white text-gray-900 border-gray-300 focus:ring-purple-400"
+                }`}
+              />
+            </div>
+
+            {/* Phone */}
+            <div>
+              <label
+                htmlFor="phone"
+                className={`block mb-1 text-sm font-medium ${
+                  dark ? "text-white" : "text-gray-900"
+                }`}
+              >
+                Phone
+              </label>
+              <input
+                id="phone"
+                name="from_phone"
+                type="tel"
+                required
+                placeholder="Phone Number"
+                className={`w-full rounded-md p-3 border focus:ring-2 focus:outline-none ${
+                  dark
+                    ? "bg-gray-900 text-white border-gray-700 focus:ring-purple-500"
+                    : "bg-white text-gray-900 border-gray-300 focus:ring-pink-300"
+                }`}
+              />
+            </div>
+
+            {/* Message */}
+            <div>
+              <label
+                htmlFor="message"
+                className={`block mb-1 text-sm font-medium ${
+                  dark ? "text-white" : "text-gray-900"
+                }`}
+              >
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                placeholder="Your message..."
+                className={`w-full rounded-md p-3 border focus:ring-2 focus:outline-none ${
+                  dark
+                    ? "bg-gray-900 text-white border-gray-700 focus:ring-purple-500"
+                    : "bg-white text-gray-900 border-gray-300 focus:ring-purple-300"
+                }`}
+              ></textarea>
+            </div>
+
+            {/* Submit Button */}
+            <button
+              type="submit"
+              className={`flex items-center justify-center gap-2 px-6 py-3 rounded-lg w-full text-lg font-semibold transition-all duration-300 ${
+                dark
+                  ? buttonText.includes("Sent")
+                    ? "bg-green-600"
+                    : "bg-purple-700 hover:bg-purple-800"
+                  : "bg-pink-500 text-white hover:bg-pink-600"
+              }`}
             >
-              <form ref={form} className="space-y-4" onSubmit={sendEmail}>
-                <div>
-                  <label className="sr-only" htmlFor="name">
-                    Name
-                  </label>
-                  <input
-                    className="w-full rounded-lg border-gray-200 p-3 text-sm"
-                    placeholder="Name"
-                    type="text"
-                    id="name"
-                    name="from_name"
-                    required
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <div>
-                    <label className="sr-only" htmlFor="email">
-                      Email
-                    </label>
-                    <input
-                      className="w-full rounded-lg border-gray-200 p-3 text-sm"
-                      placeholder="Email address"
-                      type="email"
-                      id="email"
-                      name="from_email"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label className="sr-only" htmlFor="phone">
-                      Phone
-                    </label>
-                    <input
-                      className="w-full rounded-lg border-gray-200 p-3 text-sm"
-                      placeholder="Phone Number"
-                      type="tel"
-                      id="phone"
-                      name="from_phone"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div className="">
-                  <label className="sr-only" htmlFor="message">
-                    Message
-                  </label>
-
-                  <textarea
-                    className="ring-1 w-full rounded-lg border-gray-200 p-3 text-sm"
-                    placeholder="Message"
-                    rows="5"
-                    id="message"
-                    name="message"
-                    required
-                  ></textarea>
-                </div>
-
-                <div className={`mt-4 `}>
-                  <button
-                    type="submit"
-                    className={`inline-block w-full rounded-lg  px-5 py-3 font-medium text-white sm:w-auto hover:ring-1 ${
-                      dark
-                        ? email_sent
-                          ? "bg-green-500"
-                          : "bg-gray-900 hover:bg-gray-950"
-                        : "bg-gray-700 hover:bg-gray-900 ring-white"
-                    } transition-all`}
-                  >
-                    {Enquiry}
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
+              <FiSend />
+              {buttonText}
+            </button>
+          </form>
         </div>
       </div>
     </section>
