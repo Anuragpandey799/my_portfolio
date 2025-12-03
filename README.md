@@ -1,4 +1,4 @@
-# 🌐 Personal Portfolio – [Your Name]
+# 🌐 Personal Portfolio – Anurag Pandey
 
 A modern, responsive, and fast portfolio website built with **React**, designed to showcase my work, skills, projects, and experience.  
 This portfolio includes smooth animations, dark mode support, a blog section, a resume page, and project showcases.
