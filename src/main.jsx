@@ -17,12 +17,10 @@ import Blog from "./components/pages/Blog.jsx";
 
 
 const Main = () => {
-  
-  
-
   const [dark, setDark] = useState(true);
+  
   return (
-    <Router>
+    <Router basename="/my_portfolio">
       <Routes>
         <Route path="/" element={<App dark={dark} setDark={setDark} />}>
           <Route index element={<Home dark={dark} />} />
@@ -38,6 +36,7 @@ const Main = () => {
     </Router>
   );
 };
+
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
