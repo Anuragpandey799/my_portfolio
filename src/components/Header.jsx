@@ -12,15 +12,15 @@ function Navbar({ dark, setDark }) {
   const closeMenu = () => setIsMobileMenuOpen(false);
 
   const navLinks = [
-    { name: "Home", path: "/home", title: "Text Manipulator - Home" },
-    { name: "About", path: "/about", title: "Text Manipulator - About" },
+    { name: "Home", path: "/home", title: "Anurag Pandey's portfolio - Home" },
+    { name: "About", path: "/about", title: "Anurag Pandey's portfolio - About" },
     {
       name: "Projects",
       path: "/project",
-      title: "Text Manipulator - Projects",
+      title: "Anurag Pandey's portfolio - Projects",
     },
-    { name: "Contact", path: "/contact", title: "Text Manipulator - Contact" },
-    { name: "Blog", path: "/blog", title: "Text Manipulator - Blog" },
+    { name: "Contact", path: "/contact", title: "Anurag Pandey's portfolio - Contact" },
+    { name: "Blog", path: "/blog", title: "Anurag Pandey's portfolio - Blog" },
   ];
 
   const isActive = (path) => location.pathname === path;
